@@ -17,10 +17,11 @@
     if (self) {
         _name = name;
         _specialization = specialization;
-        _acceptedPatients = [@[] mutableCopy];
+        _acceptedPatients = [[NSMutableSet alloc] init];
     }
     return self;
 }
+
 - (BOOL)acceptPatient:(Patient *)patient
 {
     if (patient.healthCard) {
@@ -31,5 +32,17 @@
         NSLog(@"%@ couldn't exmaine %@ becasue didn't %@ have a health card.", self.name, patient.name, patient.name);
         return NO;
     }
+}
+
+- (NSString *)askAboutSymtoms:(Patient *)patient
+{
+    NSString *prescription;
+    if ([self.acceptedPatients containsObject:patient])
+    {
+        
+    } else {
+        prescription = @"Not an accepted patient. Couldn't give medication.";
+    }
+    return prescription;
 }
 @end

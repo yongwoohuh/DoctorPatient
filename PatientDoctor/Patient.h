@@ -14,8 +14,10 @@
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, assign) NSInteger age;
 @property (nonatomic, assign) BOOL healthCard;
+@property (nonatomic, strong) NSArray *symptoms;
 
 - (instancetype)initWithName:(NSString *)name Age:(NSInteger) age;
 - (void)visitDoctor:(Doctor *)doctor;
+- (NSString *)requestMedication:(Doctor *)doctor;
 
 @end

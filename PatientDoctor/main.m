@@ -13,15 +13,19 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
        
-        Doctor *doctor1 = [[Doctor alloc] initWithName:@"Who" andSpecialization:@"back pain"];
+        Doctor *doctor1 = [[Doctor alloc] initWithName:@"Who" andSpecialization:@"back"];
         
         Patient *patient1 = [[Patient alloc]initWithName:@"Chris" Age:35];
+        patient1.symptoms = @[@"pinched nerve in lower back", @"can't lift right leg", @"trouble walking"];
+        
         Patient *patient2 = [[Patient alloc]initWithName:@"Paul" Age:27];
         patient2.healthCard = NO;
+        
         Patient *patient3 = [[Patient alloc]initWithName:@"Aron" Age:18];
         
         NSLog(@"%@ is a doctor who specializes in %@", doctor1.name, doctor1.specialization);
         NSLog(@"The patient is %@ and %ld years old", patient1.name, patient1.age);
+        
         
         NSArray *patients = @[patient1, patient2, patient3];
         
@@ -31,6 +35,9 @@ int main(int argc, const char * argv[]) {
         }
         
         NSLog(@"%@ accepted %ld patients", doctor1.name, [doctor1.acceptedPatients count]);
+        
+        // test requestMedication
+        patient1
         
     }
     return 0;

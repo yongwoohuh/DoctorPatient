@@ -25,4 +25,9 @@
 {
     NSLog(@"%@ visited doctor %@", self.name, doctor.name);
 }
+- (NSString *)requestMedication:(Doctor *)doctor
+{
+    NSString *prescription = [doctor askAboutSymptoms:self.symptoms];
+    return prescription;
+}
 @end

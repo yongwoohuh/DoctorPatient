@@ -13,8 +13,9 @@
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *specialization;
-@property (nonatomic, strong) NSMutableArray* acceptedPatients;
+@property (nonatomic, strong) NSMutableSet* acceptedPatients;
 
 - initWithName:(NSString *)name andSpecialization:(NSString *)specialization;
 - (BOOL)acceptPatient:(Patient *)patient;
+- (NSString *)askAboutSymtoms:(Patient *)patient;
 @end
