@@ -18,6 +18,7 @@
         _name = name;
         _specialization = specialization;
         _acceptedPatients = [[NSMutableSet alloc] init];
+        _prescriptions = [[NSMutableDictionary alloc] init];
     }
     return self;
 }
@@ -39,7 +40,8 @@
     NSString *prescription;
     if ([self.acceptedPatients containsObject:patient])
     {
-        
+        prescription = [NSString stringWithFormat:@"Prescription for %@", patient.symptoms];
+        self.prescriptions[patient.name] = prescription;
     } else {
         prescription = @"Not an accepted patient. Couldn't give medication.";
     }

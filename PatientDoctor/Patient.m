@@ -27,7 +27,8 @@
 }
 - (NSString *)requestMedication:(Doctor *)doctor
 {
-    NSString *prescription = [doctor askAboutSymptoms:self.symptoms];
+    NSString *prescription = [doctor askAboutSymtoms:self];
+    NSLog(@"prescritpion is %@", prescription);
     return prescription;
 }
 @end

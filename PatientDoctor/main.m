@@ -37,7 +37,8 @@ int main(int argc, const char * argv[]) {
         NSLog(@"%@ accepted %ld patients", doctor1.name, [doctor1.acceptedPatients count]);
         
         // test requestMedication
-        patient1
+        [patient1 requestMedication:doctor1];
+        NSLog(@"%@", doctor1.prescriptions);
         
     }
     return 0;
